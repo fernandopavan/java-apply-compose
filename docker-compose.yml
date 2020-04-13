@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  db:
+    container_name: projeto_apply_postgres
+    image: postgres:latest
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_USER=projeto_owner
+      - POSTGRES_DB=projeto_apply
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+  api:
+    container_name: projeto_apply_api
+    image: fernandopavan/java-apply-api:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+  front:
+    container_name: projeto_apply_front
+    image: fernandopavan/java-apply-front:latest
+    ports:
+      - 4200:4200
+    depends_on:
+      - api
+
+volumes:
+  db: {}

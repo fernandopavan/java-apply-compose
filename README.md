@@ -27,4 +27,4 @@ Dúvidas:
 <br/>
 `email: fernando.pavan@outlook.com`
 <br/>
-`ceuluar: 48 9 9113.5317`
+`celular: 48 9 9113.5317`

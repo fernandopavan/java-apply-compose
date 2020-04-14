@@ -14,7 +14,7 @@ services:
       - 5432:5432
   api:
     container_name: projeto_apply_api
-    image: fernandopavan/java-apply-api:1.0
+    image: fernandopavan/java-apply-api:1.1
     ports:
       - 8080:8080
     depends_on:
@@ -22,9 +22,9 @@ services:
 
   front:
     container_name: projeto_apply_front
-    image: fernandopavan/java-apply-front:1.0
+    image: fernandopavan/java-apply-front:1.1
     ports:
-      - 4200:4200
+      - 9000:80
     depends_on:
       - api
 
